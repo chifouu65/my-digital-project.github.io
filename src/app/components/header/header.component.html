@@ -1,0 +1,75 @@
+<header id="header">
+  <nav [ngClass]="{
+  'text-black bg-white shadow-xl': navOutBanner()
+  }" class="hidden md:flex z-20 justify-between items-center w-full
+  text-sm lg:text-xl fixed font-semibold text-white px-8 h-32
+     backdrop-blur-lg
+  ">
+    <li (click)="router.navigateByUrl('about')">A propos</li>
+    <li (click)="router.navigateByUrl('expeditions')">Expéditions</li>
+    <li (click)="router.navigateByUrl('associations')">Associations</li>
+    <img src="assets/images/layout/logo.png"
+         alt="header"
+         class="h-full"
+    >
+    <li (click)="router.navigateByUrl('news')">Actualité</li>
+    <li (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
+    <app-button (click)="openDialog()" name="Contact"/>
+  </nav>
+  <nav class="flex justify-between items-center md:hidden w-full px-4">
+    <div class="w-24 h-24">
+      <img src="assets/images/layout/logo.png" alt="header" height="162" width="162">
+    </div>
+    <div class="menu">
+      <button [matMenuTriggerFor]="menu" mat-icon-button style="color:white;">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu>
+        <li mat-menu-item>A propos</li>
+        <li mat-menu-item>Expéditions</li>
+        <li mat-menu-item>Associations</li>
+        <li mat-menu-item>Actualité</li>
+        <li class="flex justify-center">
+          <app-button (click)="modalIsOpen.set(true)" name="Contact"/>
+        </li>
+      </mat-menu>
+    </div>
+  </nav>
+  @if (type()) {
+    <div class="hidden md:block h-screen w-full">
+      <img src="assets/images/layout/head.png"
+           alt="header"
+           class="h-full object-cover"
+      >
+      <div class="z-30 absolute top-1/2 text-white w-full flex justify-center items-center flex-col">
+        <p class="text-6xl font-semibold">
+          Repoussez vos limites
+        </p>
+        <p>Place à une aventure unique</p>
+        <p style="font-size: 50px" class="pt-4" (click)="scroll('main')">
+          ˇ
+        </p>
+      </div>
+    </div>
+
+  } @else {
+    <img src="assets/images/layout/head.png"
+         alt="header"
+         class="hidden md:block relative top-0 z-10"
+         height="913"
+         width="100%"
+    >
+  }
+
+</header>
+
+@if(navOutBanner()) {
+  <div (click)="scroll('header')" style="font-size: 40px"
+       class="animate-bounce cursor-pointer fixed bottom-8 right-8 text-white bg-black bg-opacity-70 w-12 h-12 flex justify-center items-center rounded-full ">
+    <p class="absolute top-6">
+      ˆ
+    </p>
+  </div>
+}
+
+

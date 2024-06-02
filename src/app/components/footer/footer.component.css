@@ -1,0 +1,11 @@
+
+footer .links {
+  background-color: #072D35;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .bg {
+  }
+}

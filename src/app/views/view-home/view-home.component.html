@@ -1,0 +1,47 @@
+<div class="flex flex-col gap-16 py-16 xl:py-32">
+  <section class="px-16 xl:px-32 flex flex-col gap-16">
+
+    @for (article of articles; track $index) {
+      <div class="flex gap-0 md:gap-16 xl:gap-32 justify-between items-center w-full flex-col md:flex-row article"
+           style="height:547px">
+        <img class="md:w-1/2 w-full object-cover" [src]="article.img.url" [alt]="article.img.alt"/>
+        <div class="flex flex-col gap-4 h-full justify-center">
+          <div class="flex flex-col justify-center tracking-wider">
+            <div *ngFor="let categorie of article.categories">
+              <p class="text-sm">{{ categorie }}</p>
+            </div>
+            <h2 class="text-lg">{{ article.title }}</h2>
+            <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
+
+          </div>
+          <app-button (click)="article.button.action()" [name]="article.button.title"/>
+        </div>
+      </div>
+    }
+
+  </section>
+  <section class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
+    <p class="text-3xl font-medium ">Associations</p>
+    <p class="text-sm ">Lorem ipsum dolor sit amet consectetur. Dui diam iaculis pharetra vitae tempor et etiam. Cras
+      pharetra nullam dignissim est phasellus diam. Mattis massa mattis proin faucibus diam. Morbi sit neque dolor
+      sollicitudin sed volutpat nullam. Enim integer tortor eu egestas quis. Et non.</p>
+    <p-carousel class=""
+      [value]="associations"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [showIndicators]="false"
+      [responsiveOptions]="responsiveOptions">
+      <ng-template let-association pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
+          <div class="mb-3 font-medium text-lg">
+            {{ association.name }}
+          </div>
+          <img [src]="association.img" alt=""/>
+        </div>
+      </ng-template>
+
+    </p-carousel>
+  </section>
+
+</div>

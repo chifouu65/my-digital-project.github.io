@@ -1,0 +1,11 @@
+
+  @if(type() !== 'primary') {
+    <button class="text-sm lg:text-xl" mat-stroked-button color="primary">
+      {{name()}}
+    </button>
+  } @else {
+    <button class="text-sm lg:text-xl" mat-flat-button color="primary">
+      {{name()}}
+    </button>
+  }
+

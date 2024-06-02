@@ -1,0 +1,68 @@
+<footer>
+  <div class="w-full flex flex-col lg:flex-row">
+
+    <div style="
+            background-image: url('assets/images/layout/footer.png');
+        " class=" w-full bg lg:w-1/2 lg:bg-white hidden lg:block flex-col items-center justify-center text-center p-8">
+    </div>
+    <div
+         class="news-letter w-full bg lg:w-1/2 lg:bg-white flex-col items-center justify-center text-center p-8">
+      <h2 class="text-lg">Suivez moi pour ne rien rater !</h2>
+      <p class="text-sm	">Vous souhaitez recevoir et suivre en avant première les projets et les futurs projets ?
+        Inscrivez vous ! </p>
+      <form class="flex lg:flex-row flex-col justify-center items-center w-full gap-4">
+        <mat-form-field class="relative top-3">
+          <mat-label>Enter your email</mat-label>
+          <input matInput
+                 placeholder="pat@example.com"
+                 [formControl]="email"
+                 (blur)="updateErrorMessage()"
+                 required>
+          @if (email.invalid) {
+            <mat-error>{{ errorMessage }}</mat-error>
+          }
+        </mat-form-field>
+        <app-button (click)="submitEmail()" name="Je m’inscrit !" type="primary">
+
+        </app-button>
+      </form>
+    </div>
+
+  </div>
+  <div class="flex flex-col links p-16 xl:p-32 gap-8 text-white">
+    <div class="w-full flex justify-between">
+      <div style="max-width: 30%">
+        <p class="text-lg">A propos</p>
+        <p>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur.</p>
+        <p>
+          Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi
+          accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare
+          conubia nostra.
+        </p>
+      </div>
+      <div style="max-width: 30%">
+        <li>A propos</li>
+        <p>Expéditionss</p>
+        <p>Associations</p>
+        <p>Actualité</p>
+        <p>Sponsors / Partenaires</p>
+        <p>CGU</p>
+        <p>RGPD</p>
+      </div>
+      <div style="max-width: 30%">
+        <p class="text-lg">Contact</p>
+        <p>Proin gravida nibh auctor aliquet
+          amet anean sollicitudin, lorem quis.</p>
+        <p>
+          12 Avenue, New York, NY 10160
+          +1 910-626-85255
+          contact&#64;nature.com"
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <p>Copyright © 2024 Josué Aventure</p>
+      <p>Design par Karen Basnier / Developpement Noah Lhote</p>
+    </div>
+  </div>
+</footer>
