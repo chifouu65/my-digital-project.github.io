@@ -954,9 +954,9 @@ var BaseIcon = class _BaseIcon {
 })();
 
 export {
-  BaseIcon,
   DomHandler,
+  BaseIcon,
   Ripple,
   RippleModule
 };
-//# sourceMappingURL=chunk-EC7PWZCQ.js.map
+//# sourceMappingURL=chunk-6Y2SUB6H.js.map

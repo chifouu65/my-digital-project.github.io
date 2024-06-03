@@ -3,7 +3,7 @@ import {
   DomHandler,
   Ripple,
   RippleModule
-} from "./chunk-EC7PWZCQ.js";
+} from "./chunk-6Y2SUB6H.js";
 import {
   Footer,
   Header,
