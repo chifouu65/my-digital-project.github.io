@@ -8,6 +8,7 @@ import {CarouselModule} from "primeng/carousel";
 import {TagModule} from "primeng/tag";
 import {ButtonModule} from "primeng/button";
 import { FormComponent } from '../../components/form/form.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-view-home',
@@ -22,7 +23,8 @@ import { FormComponent } from '../../components/form/form.component';
     CarouselModule,
     TagModule,
     ButtonModule,
-    FormComponent
+    FormComponent,
+    MatIcon
   ],
   templateUrl: './view-home.component.html',
   styleUrl: './view-home.component.css'
@@ -107,4 +109,7 @@ export class ViewHomeComponent {
     }
   ]
 
+  formSubmit(event:any) {
+    console.log('formSubmit: ', event)
+  }
 }

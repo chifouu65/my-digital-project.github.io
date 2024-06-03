@@ -1,6 +1,6 @@
 
   @if(type() !== 'primary') {
-    <button class="text-sm lg:text-xl" mat-stroked-button color="primary">
+    <button [type]="buttonType()" class="text-sm lg:text-xl" mat-stroked-button color="primary">
       {{name()}}
     </button>
   } @else {
