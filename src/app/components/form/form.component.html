@@ -1,0 +1,22 @@
+
+<div class="justify-center items-center flex">
+  <form #myform = "ngForm" (ngSubmit)="onSubmit(myform)" class="flex flex-col" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Nom - Prénom *</mat-label>
+      <input name="name" matInput type="text" placeholder="Prince José..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email *</mat-label>
+      <input name="email" type="email" matInput placeholder="jose@gmail.com..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label type="text">Object *</mat-label>
+      <input name="object" matInput placeholder="Question / Sponsors / Partenaires / Associations..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Message *</mat-label>
+      <textarea type="textarea" name="message" matInput placeholder="Ex. It makes me feel..." ngModel></textarea>
+    </mat-form-field>
+    <input type = "submit" value = "Send">
+  </form>
+</div>

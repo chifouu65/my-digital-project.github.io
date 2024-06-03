@@ -7,6 +7,7 @@ import {MdbCarouselModule} from "mdb-angular-ui-kit/carousel";
 import {CarouselModule} from "primeng/carousel";
 import {TagModule} from "primeng/tag";
 import {ButtonModule} from "primeng/button";
+import { FormComponent } from '../../components/form/form.component';
 
 @Component({
   selector: 'app-view-home',
@@ -20,7 +21,8 @@ import {ButtonModule} from "primeng/button";
     MdbCarouselModule,
     CarouselModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    FormComponent
   ],
   templateUrl: './view-home.component.html',
   styleUrl: './view-home.component.css'
