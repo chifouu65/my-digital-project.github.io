@@ -10,7 +10,7 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './partenaires-and-sponsors-section.component.css'
 })
 export class PartenairesAndSponsorsSectionComponent {
-  data = input.required<any[]>()
+  sponsors = input.required<any[]>()
   responsiveOptions =input.required<CarouselResponsiveOptions[]>()
 
 }

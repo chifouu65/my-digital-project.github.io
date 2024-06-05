@@ -17,10 +17,12 @@
   >
     <ng-template let-association pTemplate="item">
       <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
-        <div class="mb-3 font-medium text-lg">
-          {{ association.name }}
+        <div class="w-full p-8">
+          <div class="mb-3 font-medium text-lg">
+            {{ association.name }}
+          </div>
+          <img class="w-full h-full" [src]="association.img" [alt]="association.name" />
         </div>
-        <img [src]="association.img" alt="" />
       </div>
     </ng-template>
   </p-carousel>

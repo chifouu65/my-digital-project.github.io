@@ -2,21 +2,20 @@
     <p class="text-3xl font-medium">Sponsors & Partenaires</p>
     <p-carousel
       class=""
-      [value]="data()"
+      [value]="sponsors()"
       [numVisible]="3"
       [numScroll]="3"
       [circular]="true"
       [showIndicators]="false"
       [responsiveOptions]="responsiveOptions()"
     >
-      <ng-template let-association pTemplate="item">
-        <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
-          <div class="mb-3 font-medium text-lg">
-            {{ association.name }}
-          </div>
-          <img [src]="association.img" alt="" />
+    <ng-template let-sponsor pTemplate="item">
+      <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
+        <div class="w-full p-8">
+          <img class="w-full h-full" [src]="sponsor.img" [alt]="sponsor.name" />
         </div>
-      </ng-template>
+      </div>
+    </ng-template>
     </p-carousel>
 
     <app-button name="En savoir plus !" />

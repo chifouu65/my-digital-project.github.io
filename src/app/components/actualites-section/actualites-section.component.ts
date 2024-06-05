@@ -10,4 +10,6 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class ActualitesSectionComponent {
   actualites = input.required<any[]>()
+
+  title = input<boolean>(false)
 }

@@ -1,6 +1,7 @@
 <section class="px-16 xl:px-32 flex flex-col gap-8 text-start">
     <div class="flex flex-col gap-4">
-      <div class="flex flex-col">
+      @if (title() === true) {
+        <div class="flex flex-col">
           <p class="text-sm">
             Actualités
           </p>
@@ -8,6 +9,9 @@
           Une panoplie de services !
         </div>
       </div>
+      } @else {
+
+      }
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         @for (actualite of actualites(); track $index) {

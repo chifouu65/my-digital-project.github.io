@@ -60,6 +60,22 @@ export class ViewHomeComponent {
     }
   ];
 
+  sponsors = [
+    {
+      name: 'Krys',
+      img: 'assets/images/sponsors/Image-1.png'
+    },
+    {
+      name: 'Yukadi',
+      img: 'assets/images/sponsors/Image-2.png'
+    },
+    {
+      name: 'Essential trainer',
+      img: 'assets/images/sponsors/Image.png'
+
+    }
+  ]
+
   associations = [
     {
       name: 'Anne Charlotte',
