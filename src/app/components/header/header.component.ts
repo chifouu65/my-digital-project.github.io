@@ -42,6 +42,9 @@ export class HeaderComponent {
   windowHeight = signal(0)
 
   constructor() {
+    
+    console.log(this.router.url)
+
     effect(() => {
       console.log(this.navOutBanner(), ' change navOutBanner')
     })
