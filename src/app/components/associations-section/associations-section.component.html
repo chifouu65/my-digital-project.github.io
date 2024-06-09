@@ -1,0 +1,31 @@
+<section class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
+  <p class="text-3xl font-medium">Associations</p>
+  <p class="text-sm">
+    Lorem ipsum dolor sit amet consectetur. Dui diam iaculis pharetra vitae
+    tempor et etiam. Cras pharetra nullam dignissim est phasellus diam. Mattis
+    massa mattis proin faucibus diam. Morbi sit neque dolor sollicitudin sed
+    volutpat nullam. Enim integer tortor eu egestas quis. Et non.
+  </p>
+  <p-carousel
+    class=""
+    [value]="associations()"
+    [numVisible]="3"
+    [numScroll]="3"
+    [circular]="true"
+    [showIndicators]="false"
+    [responsiveOptions]="responsiveOptions()"
+  >
+    <ng-template let-association pTemplate="item">
+      <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
+        <div class="w-full p-8">
+          <div class="mb-3 font-medium text-lg">
+            {{ association.name }}
+          </div>
+          <img class="w-full h-full" [src]="association.img" [alt]="association.name" />
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <app-button name="En savoir plus !" />
+</section >

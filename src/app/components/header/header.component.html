@@ -1,17 +1,20 @@
 <header id="header">
   <nav [ngClass]="{
-  'text-black bg-white shadow-xl': navOutBanner()
+  'text-black bg-white shadow-xl': navOutBanner(),
+  'text-white': !navOutBanner()
   }" class="hidden md:flex z-20 justify-between items-center w-full
-  text-sm lg:text-xl fixed font-semibold text-white px-8 h-32
+  text-sm lg:text-xl fixed font-semibold px-8 h-32
      backdrop-blur-lg
   ">
     <li (click)="router.navigateByUrl('about')">A propos</li>
     <li (click)="router.navigateByUrl('expeditions')">Expéditions</li>
     <li (click)="router.navigateByUrl('associations')">Associations</li>
-    <img src="assets/images/layout/logo.png"
+    <li (click)="router.navigateByUrl('')">
+      <img src="assets/images/layout/logo.png"
          alt="header"
          class="h-full"
-    >
+      >
+    </li>
     <li (click)="router.navigateByUrl('news')">Actualité</li>
     <li (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
     <app-button (click)="openDialog()" name="Contact"/>
@@ -45,9 +48,9 @@
         <p class="text-6xl font-semibold">
           Repoussez vos limites
         </p>
-        <p>Place à une aventure unique</p>
-        <p style="font-size: 50px" class="pt-4" (click)="scroll('main')">
-          ˇ
+        <p>Place à usne aventure unique</p>
+        <p class="cursor-pointer">
+          <mat-icon  (click)="scroll('main')" aria-hidden="false" fontIcon="keyboard_arrow_down"></mat-icon>
         </p>
       </div>
     </div>
@@ -66,9 +69,7 @@
 @if(navOutBanner()) {
   <div (click)="scroll('header')" style="font-size: 40px"
        class="animate-bounce cursor-pointer fixed bottom-8 right-8 text-white bg-black bg-opacity-70 w-12 h-12 flex justify-center items-center rounded-full ">
-    <p class="absolute top-6">
-      ˆ
-    </p>
+       <mat-icon aria-hidden="false" fontIcon="keyboard_arrow_up"></mat-icon>
   </div>
 }
 

@@ -1,0 +1,22 @@
+<section class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
+    <p class="text-3xl font-medium">Sponsors & Partenaires</p>
+    <p-carousel
+      class=""
+      [value]="sponsors()"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [showIndicators]="false"
+      [responsiveOptions]="responsiveOptions()"
+    >
+    <ng-template let-sponsor pTemplate="item">
+      <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
+        <div class="w-full p-8">
+          <img class="w-full h-full" [src]="sponsor.img" [alt]="sponsor.name" />
+        </div>
+      </div>
+    </ng-template>
+    </p-carousel>
+
+    <app-button name="En savoir plus !" />
+  </section>

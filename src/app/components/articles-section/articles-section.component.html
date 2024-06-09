@@ -1,0 +1,26 @@
+<section class="px-16 xl:px-32 flex flex-col gap-32 mt-20">
+    @for (article of articles(); track $index) {
+    <div
+      class="flex gap-16 justify-between items-center w-full flex-col md:flex-row article"
+    >
+      <img
+        class="md:w-1/2 w-full object-cover"
+        [src]="article.img.url"
+        [alt]="article.img.alt"
+      />
+      <div class="flex flex-col gap-4 h-full justify-center">
+        <div class="flex flex-col justify-center tracking-wider">
+          <div *ngFor="let categorie of article.categories">
+            <p class="text-sm">{{ categorie }}</p>
+          </div>
+          <h2 class="text-lg">{{ article.title }}</h2>
+          <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
+        </div>
+        <app-button
+          (click)="article.button.action()"
+          [name]="article.button.title"
+        />
+      </div>
+    </div>
+    }
+  </section>

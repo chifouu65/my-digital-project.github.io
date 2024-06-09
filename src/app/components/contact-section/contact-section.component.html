@@ -1,0 +1,46 @@
+<section class="px-16 xl:px-32 flex flex-col gap-8 justify-center items-center w-full">
+    <div class="pb-8">
+      <p class="text-3xl font-medium">Contactez-moi</p>
+    <p class="text-sm font-medium">Une question ? Une réponse !</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8 justify-center w-full">
+      <div class="w-full md:w-1/2 flex flex-col gap-4">
+        <p class="text-3xl font-medium">Contact</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia unde
+          expedita alias consequuntur.
+        </p>
+
+        <ul style="color: #794d1b" class="flex flex-col gap-2 items-start">
+          <li class="flex gap-4 items-center">
+            <mat-icon aria-hidden="false" fontIcon="location_on"></mat-icon>
+            12 Avenue, New York, NY 12220
+          </li>
+          <li class="flex gap-4 items-center">
+            <mat-icon aria-hidden="false" fontIcon="email"></mat-icon>
+            contact.mail.com
+          </li>
+          <li class="flex gap-4 items-center">
+            <mat-icon aria-hidden="false" fontIcon="phone"></mat-icon>
+            07.78.78.78.78
+          </li>
+        </ul>
+        <div>
+          <p class="text-3xl font-medium">Reseaux sociaux</p>
+          <ul class="flex gap-2" style="color: #794d1b">
+            <li>
+              <mat-icon fontIcon="home"></mat-icon>
+            </li>
+            <li>
+              <mat-icon fontIcon="home"></mat-icon>
+            </li>
+            <li>
+              <mat-icon fontIcon="home"></mat-icon>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <app-form (data)="formSubmit($event)" class="w-full md:w-1/2"></app-form>
+    </div>
+  </section>

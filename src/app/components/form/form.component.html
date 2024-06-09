@@ -1,0 +1,28 @@
+
+@if (formIsSend()) {
+  <div class="flex w-full h-full justify-center items-center">
+    <p class="text-center text-3xl font-medium pt-10 md:pt-0">
+      Merci pour votre message ! 
+    </p>
+  </div>
+}  @else {
+  <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" class="flex flex-col w-full" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Nom - Prénom *</mat-label>
+      <input name="name" matInput type="text" placeholder="Prince José..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email *</mat-label>
+      <input name="email" type="email" matInput placeholder="jose@gmail.com..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label type="text">Object *</mat-label>
+      <input name="object" matInput placeholder="Question / Sponsors / Partenaires / Associations..." ngModel />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Message *</mat-label>
+      <textarea type="textarea" name="message" matInput placeholder="Ex. It makes me feel..." ngModel></textarea>
+    </mat-form-field>
+      <app-button name="Envoyer" buttonType="submit"/>
+  </form>
+}

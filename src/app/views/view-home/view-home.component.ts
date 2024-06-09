@@ -1,12 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {NgForOf, NgOptimizedImage} from "@angular/common";
-import {ButtonComponent} from "../../components/button/button.component";
-import {Articles} from "../../model/articles";
-import {MdbCarouselModule} from "mdb-angular-ui-kit/carousel";
-import {CarouselModule} from "primeng/carousel";
-import {TagModule} from "primeng/tag";
-import {ButtonModule} from "primeng/button";
+import { Component, OnInit } from '@angular/core';
+import { MatGridList, MatGridListModule, MatGridTile } from "@angular/material/grid-list";
+import { NgForOf, NgOptimizedImage } from "@angular/common";
+import { ButtonComponent } from "../../components/button/button.component";
+import { Articles } from "../../model/articles";
+import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
+import { CarouselModule } from "primeng/carousel";
+import { TagModule } from "primeng/tag";
+import { ButtonModule } from "primeng/button";
+import { FormComponent } from '../../components/form/form.component';
+import { MatIcon } from '@angular/material/icon';
+import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
+import { AssociationsSectionComponent } from '../../components/associations-section/associations-section.component';
+import { ActualitesSectionComponent } from '../../components/actualites-section/actualites-section.component';
+import { PartenairesAndSponsorsSectionComponent } from '../../components/partenaires-and-sponsors-section/partenaires-and-sponsors-section.component';
+import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
 
 @Component({
   selector: 'app-view-home',
@@ -20,7 +27,15 @@ import {ButtonModule} from "primeng/button";
     MdbCarouselModule,
     CarouselModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    MatIcon,
+    MatGridListModule,
+    
+    ContactSectionComponent,
+    PartenairesAndSponsorsSectionComponent,
+    ActualitesSectionComponent,
+    AssociationsSectionComponent,
+    ArticlesSectionComponent
   ],
   templateUrl: './view-home.component.html',
   styleUrl: './view-home.component.css'
@@ -30,7 +45,7 @@ export class ViewHomeComponent {
   responsiveOptions = [
     {
       breakpoint: '1199px',
-      numVisible: 1,
+      numVisible: 3,
       numScroll: 1
     },
     {
@@ -44,6 +59,22 @@ export class ViewHomeComponent {
       numScroll: 1
     }
   ];
+
+  sponsors = [
+    {
+      name: 'Krys',
+      img: 'assets/images/sponsors/Image-1.png'
+    },
+    {
+      name: 'Yukadi',
+      img: 'assets/images/sponsors/Image-2.png'
+    },
+    {
+      name: 'Essential trainer',
+      img: 'assets/images/sponsors/Image.png'
+
+    }
+  ]
 
   associations = [
     {
@@ -70,6 +101,39 @@ export class ViewHomeComponent {
       name: 'Eglise cool',
       img: 'assets/images/associations/img.png'
     },
+  ]
+
+  actualites = [
+    {
+      id: 1,
+      title: "Une panoplie de services !",
+      description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+      img: {
+        url: 'assets/images/home/profile.png',
+
+        alt: ''
+      }
+    },
+    {
+      id: 2,
+      title: "Une panoplie de services !",
+      description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+      img: {
+        url: 'assets/images/home/profile.png',
+
+        alt: ''
+      }
+    },
+    {
+      id: 3,
+      title: "Une panoplie de services !",
+      description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+      img: {
+        url: 'assets/images/home/profile.png',
+
+        alt: ''
+      }
+    }
   ]
 
   articles: Articles = [
@@ -105,4 +169,5 @@ export class ViewHomeComponent {
     }
   ]
 
+  
 }

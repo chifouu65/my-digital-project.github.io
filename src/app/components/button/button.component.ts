@@ -13,4 +13,6 @@ import {MatButtonModule} from '@angular/material/button';
 export class ButtonComponent {
   type = input<'primary' | 'secondary'>('primary');
   name = input()
+
+  buttonType = input()
 }
