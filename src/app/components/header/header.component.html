@@ -1,23 +1,28 @@
-<header id="header">
+<header id="header" [class]="'h-full'.concat(type() ? '': ' h-1/2')">
   <nav [ngClass]="{
   'text-black bg-white shadow-xl': navOutBanner(),
   'text-white': !navOutBanner()
-  }" class="hidden md:flex z-20 justify-between items-center w-full
-  text-sm lg:text-xl fixed font-semibold px-8 h-32
-     backdrop-blur-lg
+  }" class="
+  items-center justify-between
+  p-4 hidden md:flex
+  text-sm lg:text-lg fixed h-32 z-40
+  backdrop-blur-lg w-full
   ">
-    <li (click)="router.navigateByUrl('about')">A propos</li>
-    <li (click)="router.navigateByUrl('expeditions')">Expéditions</li>
-    <li (click)="router.navigateByUrl('associations')">Associations</li>
-    <li (click)="router.navigateByUrl('')">
-      <img src="assets/images/layout/logo.png"
-         alt="header"
-         class="h-full"
-      >
-    </li>
-    <li (click)="router.navigateByUrl('news')">Actualité</li>
-    <li (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
-    <app-button (click)="openDialog()" name="Contact"/>
+    <ul class="w-full flex items-center justify-between mx-auto max-w-6xl container">
+      <li class="cursor-pointer p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
+      <li class="cursor-pointer  " (click)="router.navigateByUrl('')">
+        <img src="assets/images/layout/logo.png"
+             alt="header"
+             class="h-22 w-22"
+
+        >
+      </li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
+      <app-button (click)="openDialog()" name="Contact"/>
+    </ul>
   </nav>
   <nav class="flex justify-between items-center md:hidden w-full px-4">
     <div class="w-24 h-24">
@@ -56,12 +61,17 @@
     </div>
 
   } @else {
-    <img src="assets/images/layout/head.png"
-         alt="header"
-         class="hidden md:block relative top-0 z-10"
-         height="913"
-         width="100%"
-    >
+    <div class="hidden md:flex h-full w-full">
+        <img src="assets/images/layout/head.png"
+             alt="header"
+             class="h-full w-full object-cover"
+        >
+        <div class="z-30 absolute top-1/4 text-white w-full flex justify-center items-center flex-col">
+          <p class="text-6xl font-semibold">
+            {{headerService.get()()}}
+          </p>
+        </div>
+    </div>
   }
 
 </header>

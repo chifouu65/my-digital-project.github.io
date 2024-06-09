@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-view-error',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './view-error.component.css'
 })
 export class ViewErrorComponent {
-
+  constructor(headerService: HeaderService) {
+    headerService.get().set('error')
+  }
 }

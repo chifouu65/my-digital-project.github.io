@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { FormComponent } from '../form/form.component';
 
@@ -10,6 +10,9 @@ import { FormComponent } from '../form/form.component';
   styleUrl: './contact-section.component.css'
 })
 export class ContactSectionComponent {
+
+  title = input<boolean>(true)
+
   formSubmit(event: any) {
     console.log('formSubmit: ', event)
   }

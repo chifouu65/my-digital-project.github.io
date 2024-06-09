@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
 import { ActualitesSectionComponent } from '../../components/actualites-section/actualites-section.component';
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-view-news',
@@ -10,7 +11,9 @@ import { ActualitesSectionComponent } from '../../components/actualites-section/
   styleUrl: './view-news.component.css'
 })
 export class ViewNewsComponent {
-  
+  constructor(headerService: HeaderService) {
+    headerService.get().set('new')
+  }
   actualites = [
     {
       id: 1,

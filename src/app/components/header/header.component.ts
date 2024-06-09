@@ -1,4 +1,4 @@
-import {Component, effect, HostListener, inject, input, signal} from '@angular/core';
+import {Component, computed, effect, HostListener, inject, input, signal} from '@angular/core';
 import {ButtonComponent} from "../button/button.component";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
@@ -8,6 +8,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ModalComponent} from "../modal/modal.component";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-header',
@@ -29,7 +30,6 @@ import {MatIcon} from "@angular/material/icon";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  type = input<boolean>(true) // if true its home header else it's other....
 
   router = inject(Router)
 
@@ -41,8 +41,15 @@ export class HeaderComponent {
 
   windowHeight = signal(0)
 
+  headerService = inject(HeaderService)
+
+
+  type = computed(() => {
+    return this.headerService.get()() === 'home'
+  })
   constructor() {
-    
+
+
     console.log(this.router.url)
 
     effect(() => {
@@ -53,11 +60,14 @@ export class HeaderComponent {
   // @HostListener('scroll', ['$event']) // for scroll events of the current element
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll() {
-     this.windowHeight.set(window.innerHeight)
+     this.windowHeight.set(
+       !this.type() ?
+       window.innerHeight - window.innerHeight /2 : window.innerHeight
+     )
 
     if (!this.navOutBanner() && window.scrollY >= this.windowHeight()) {
       this.navOutBanner.set(true)
-    } else if (this.navOutBanner() && window.scrollY <= this.windowHeight()) {
+    } else if (this.navOutBanner() && window.scrollY <= this.windowHeight() ) {
       this.navOutBanner.set(false)
     }
 

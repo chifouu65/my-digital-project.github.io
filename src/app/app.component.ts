@@ -9,7 +9,7 @@ import {HeaderComponent} from "./components/header/header.component";
   imports: [RouterOutlet,  FooterComponent, HeaderComponent],
   template: `
     <app-header/>
-    <main id="main" class="min-h-screen">
+    <main id="main" class="min-h-screen container mx-auto">
       <router-outlet/>
     </main>
     <app-footer/>

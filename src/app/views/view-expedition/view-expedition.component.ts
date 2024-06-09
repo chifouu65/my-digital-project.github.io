@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-view-expedition',
@@ -9,6 +10,11 @@ import { ArticlesSectionComponent } from '../../components/articles-section/arti
   styleUrl: './view-expedition.component.css'
 })
 export class ViewExpeditionComponent {
+
+  constructor(headerService: HeaderService) {
+    headerService.get().set('expédition')
+  }
+
   articles = [
     {
       categories: ['A Propos'],

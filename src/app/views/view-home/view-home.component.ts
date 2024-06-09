@@ -14,6 +14,7 @@ import { AssociationsSectionComponent } from '../../components/associations-sect
 import { ActualitesSectionComponent } from '../../components/actualites-section/actualites-section.component';
 import { PartenairesAndSponsorsSectionComponent } from '../../components/partenaires-and-sponsors-section/partenaires-and-sponsors-section.component';
 import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-view-home',
@@ -30,7 +31,7 @@ import { ArticlesSectionComponent } from '../../components/articles-section/arti
     ButtonModule,
     MatIcon,
     MatGridListModule,
-    
+
     ContactSectionComponent,
     PartenairesAndSponsorsSectionComponent,
     ActualitesSectionComponent,
@@ -41,6 +42,10 @@ import { ArticlesSectionComponent } from '../../components/articles-section/arti
   styleUrl: './view-home.component.css'
 })
 export class ViewHomeComponent {
+
+  constructor(headerService: HeaderService) {
+    headerService.get().set('home')
+  }
 
   responsiveOptions = [
     {
@@ -169,5 +174,5 @@ export class ViewHomeComponent {
     }
   ]
 
-  
+
 }
