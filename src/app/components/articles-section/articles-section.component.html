@@ -1,4 +1,4 @@
-<section class=" max-w-4xl mx-auto flex flex-col gap-32 mt-20">
+<section class=" max-w-4xl mx-auto flex flex-col gap-32">
     @for (article of articles(); track $index) {
     <div
       class="flex gap-16 justify-between items-center w-full flex-col md:flex-row article"
@@ -8,7 +8,7 @@
         [src]="article.img.url"
         [alt]="article.img.alt"
       />
-      <div class="flex flex-col gap-4 h-full justify-center">
+      <div class="flex flex-col gap-4 justify-center">
         <div class="flex flex-col justify-center tracking-wider">
           <div *ngFor="let categorie of article.categories">
             <p class="text-sm">{{ categorie }}</p>
