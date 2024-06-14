@@ -2,7 +2,7 @@ import {Component, computed, effect, HostListener, inject, input, signal} from '
 import {ButtonComponent} from "../button/button.component";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
-import {NgClass, NgOptimizedImage} from "@angular/common";
+import {NgClass, NgOptimizedImage, TitleCasePipe} from "@angular/common";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalComponent} from "../modal/modal.component";
@@ -24,7 +24,8 @@ import {HeaderService} from "../../services/header.service";
     MatIcon,
     MatIconButton,
     MatToolbarRow,
-    NgClass
+    NgClass,
+    TitleCasePipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
@@ -71,16 +72,6 @@ export class HeaderComponent {
       this.navOutBanner.set(false)
     }
 
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ModalComponent, {
-      data: 'cvvfeve',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed:', result);
-    });
   }
 
   scroll(id: string) {

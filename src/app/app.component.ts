@@ -9,11 +9,12 @@ import {HeaderComponent} from "./components/header/header.component";
   imports: [RouterOutlet,  FooterComponent, HeaderComponent],
   template: `
     <app-header/>
-    <main id="main" class="min-h-screen container mx-auto">
+    <main id="main" class="px-8 md:px-0 container mx-auto">
       <router-outlet/>
     </main>
     <app-footer/>
   `,
+
 })
 export class AppComponent {
   title = 'my-digital-project';

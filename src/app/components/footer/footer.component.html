@@ -1,37 +1,56 @@
 <footer>
   <div class="w-full flex flex-col lg:flex-row">
-
     <div style="
             background-image: url('assets/images/layout/footer.png');
         " class=" w-full bg lg:w-1/2 lg:bg-white hidden lg:block flex-col items-center justify-center text-center p-8">
     </div>
+
     <div
          class="news-letter w-full bg lg:w-1/2 lg:bg-white flex-col items-center justify-center text-center p-8">
-      <h2 class="text-lg">Suivez moi pour ne rien rater !</h2>
-      <p class="text-sm	">Vous souhaitez recevoir et suivre en avant première les projets et les futurs projets ?
-        Inscrivez vous ! </p>
-      <form class="flex lg:flex-row flex-col justify-center items-center w-full gap-4">
-        <mat-form-field class="relative top-3">
-          <mat-label>Enter your email</mat-label>
-          <input matInput
-                 placeholder="pat@example.com"
-                 [formControl]="email"
-                 (blur)="updateErrorMessage()"
-                 required>
-          @if (email.invalid) {
-            <mat-error>{{ errorMessage }}</mat-error>
-          }
-        </mat-form-field>
-        <app-button (click)="submitEmail()" name="Je m’inscrit !" type="primary">
 
-        </app-button>
-      </form>
+      @if(submited) {
+        <h2 class="text-center">Merci, vous serez re contacté bientôt</h2>
+      } @else {
+        <h2 class="text-lg">Suivez moi pour ne rien rater !</h2>
+        <p class="text-sm	">Vous souhaitez recevoir et suivre en avant première les projets et les futurs projets ?
+          Inscrivez vous ! </p>
+        <form class="flex lg:flex-row flex-col justify-center items-center w-full gap-4">
+          <mat-form-field class="relative top-3">
+            <mat-label>Nom</mat-label>
+            <input matInput
+                   placeholder="théo"
+                   [formControl]="name"
+                   (blur)="updateErrorMessage()"
+                   type="text"
+                   required>
+            @if (name.invalid) {
+              <mat-error>{{ errorMessage }}</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="relative top-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput
+                   placeholder="pat@example.com"
+                   [formControl]="email"
+                   (blur)="updateErrorMessage()"
+                   required>
+            @if (email.invalid) {
+              <mat-error>{{ errorMessage }}</mat-error>
+            }
+          </mat-form-field>
+
+          <app-button (click)="submitEmail()" name="Je m’inscrit !" type="primary">
+
+          </app-button>
+        </form>
+      }
+
     </div>
-
   </div>
   <div class="flex flex-col links p-16 xl:p-32 gap-8 text-white">
-    <div class="w-full flex justify-between">
-      <div style="max-width: 30%">
+    <div class="w-full grid grid-cols-3 text-center">
+      <div >
         <p class="text-lg">A propos</p>
         <p>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur.</p>
         <p>
@@ -40,7 +59,7 @@
           conubia nostra.
         </p>
       </div>
-      <div style="max-width: 30%">
+      <div >
         <li>A propos</li>
         <p>Expéditionss</p>
         <p>Associations</p>
@@ -49,7 +68,7 @@
         <p>CGU</p>
         <p>RGPD</p>
       </div>
-      <div style="max-width: 30%">
+      <div >
         <p class="text-lg">Contact</p>
         <p>Proin gravida nibh auctor aliquet
           amet anean sollicitudin, lorem quis.</p>

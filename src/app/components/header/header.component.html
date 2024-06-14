@@ -1,7 +1,7 @@
-<header id="header" [class]="'h-full'.concat(type() ? '': ' h-1/2')">
+<header id="header" [class]="type() ? 'md:h-full' : 'h-1/2'">
   <nav [ngClass]="{
   'text-black bg-white shadow-xl': navOutBanner(),
-  'text-white': !navOutBanner()
+  'text-white': !navOutBanner(),
   }" class="
   items-center justify-between
   p-4 hidden md:flex
@@ -9,22 +9,21 @@
   backdrop-blur-lg w-full
   ">
     <ul class="w-full flex items-center justify-between mx-auto max-w-6xl container">
-      <li class="cursor-pointer p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
+      <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
       <li class="cursor-pointer  " (click)="router.navigateByUrl('')">
         <img src="assets/images/layout/logo.png"
              alt="header"
              class="h-22 w-22"
-
         >
       </li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700  hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
-      <app-button (click)="openDialog()" name="Contact"/>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
+      <app-button name="Contact"/>
     </ul>
   </nav>
-  <nav class="flex justify-between items-center md:hidden w-full px-4">
+  <nav class="fixed backdrop-blur-lg z-40 flex justify-between items-center md:hidden w-full px-4">
     <div class="w-24 h-24">
       <img src="assets/images/layout/logo.png" alt="header" height="162" width="162">
     </div>
@@ -33,10 +32,12 @@
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu>
-        <li mat-menu-item>A propos</li>
-        <li mat-menu-item>Expéditions</li>
-        <li mat-menu-item>Associations</li>
-        <li mat-menu-item>Actualité</li>
+        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white  hover:rounded" (click)="router.navigateByUrl('')">Accueil</li>
+        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
         <li class="flex justify-center">
           <app-button (click)="modalIsOpen.set(true)" name="Contact"/>
         </li>
@@ -44,31 +45,30 @@
     </div>
   </nav>
   @if (type()) {
-    <div class="hidden md:block h-screen w-full">
+    <div class="h-1/2 md:h-screen w-full">
       <img src="assets/images/layout/head.png"
            alt="header"
            class="h-full object-cover"
       >
-      <div class="z-30 absolute top-1/2 text-white w-full flex justify-center items-center flex-col">
+      <div class="z-30 absolute top-24 mt-8 md:top-1/2 text-white w-full flex justify-center items-center flex-col">
         <p class="text-6xl font-semibold">
           Repoussez vos limites
         </p>
         <p>Place à usne aventure unique</p>
-        <p class="cursor-pointer">
+        <p class="cursor-pointer animate-bounce ">
           <mat-icon  (click)="scroll('main')" aria-hidden="false" fontIcon="keyboard_arrow_down"></mat-icon>
         </p>
       </div>
     </div>
-
   } @else {
-    <div class="hidden md:flex h-full w-full">
+    <div class="relative top-0 h-full w-full">
         <img src="assets/images/layout/head.png"
              alt="header"
              class="h-full w-full object-cover"
         >
-        <div class="z-30 absolute top-1/4 text-white w-full flex justify-center items-center flex-col">
-          <p class="text-6xl font-semibold">
-            {{headerService.get()()}}
+        <div class="z-30 absolute top-2/4 text-white w-full flex justify-center items-center flex-col">
+          <p class="md:text-6xl text-3xl text-center font-semibold">
+            {{headerService.get()() | titlecase}}
           </p>
         </div>
     </div>

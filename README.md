@@ -1,5 +1,8 @@
 # MyDigitalProject
 
+## Modification des articles etc...
+Pour modifier les données vous devez aller dans les dossier assets/config/data.ts
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
