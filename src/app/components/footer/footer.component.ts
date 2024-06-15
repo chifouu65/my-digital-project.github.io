@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatInput} from "@angular/material/input";
@@ -7,6 +7,8 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {ButtonComponent} from "../button/button.component";
 import {MatButton} from "@angular/material/button";
 import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
+import {formGate} from "../../../assets/config/form.gate";
+import {ViewHelperService} from "../../services/view-helper.service";
 
 @Component({
   selector: 'app-footer',
@@ -31,9 +33,11 @@ export class FooterComponent {
   message = new FormControl('', [Validators.required],);
 
   errorMessage = '';
-  http = inject(HttpClient)
+  http = inject(HttpClient);
+  helperService =inject(ViewHelperService)
 
-  submited = false
+  submited = signal(false)
+
   constructor() {
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
@@ -55,20 +59,8 @@ export class FooterComponent {
   }
 
   submitEmail() {
-    console.log('submit: ', this.email.value)
-
     if(this.email.valid) {
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http.post('https://formspree.io/f/mvoeewyd',
-        { name: this.name.value, replyto: this.email.value },
-        { 'headers': headers }).subscribe(
-        (response : any) => {
-          console.log(response);
-          if(response.ok) {
-            this.submited = true
-          }
-        }
-      );
+      this.helperService.sendForm({ name: this.name.value, replyto: this.email.value }, this.submited)
     }
   }
 }

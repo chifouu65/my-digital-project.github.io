@@ -13,8 +13,6 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class FormComponent {
 
-  formIsSend = signal(false)
-
   data = output<{
     name: string,
     email: string,
@@ -33,8 +31,7 @@ export class FormComponent {
     console.log(form.value)
     this.data.emit(form.value)
     this.form.reset()
-
-    this.formIsSend.set(true)
-    console.log('resrt', this.form)
   }
-} 
+
+
+}

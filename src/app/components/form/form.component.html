@@ -1,11 +1,4 @@
 
-@if (formIsSend()) {
-  <div class="flex w-full h-full justify-center items-center">
-    <p class="text-center text-3xl font-medium pt-10 md:pt-0">
-      Merci pour votre message ! 
-    </p>
-  </div>
-}  @else {
   <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" class="flex flex-col w-full" >
     <mat-form-field class="example-full-width">
       <mat-label>Nom - Prénom *</mat-label>
@@ -25,4 +18,3 @@
     </mat-form-field>
       <app-button name="Envoyer" buttonType="submit"/>
   </form>
-}
