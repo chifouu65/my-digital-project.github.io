@@ -9,17 +9,17 @@
   backdrop-blur-lg w-full
   ">
     <ul class="w-full flex items-center justify-between mx-auto max-w-6xl container">
-      <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
-      <li class="cursor-pointer  " (click)="router.navigateByUrl('')">
+      <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('about')">A propos</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('expeditions')">Expéditions</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('associations')">Associations</li>
+      <li class="cursor-pointer  " (click)="helperService.navigateTo('')">
         <img src="assets/images/layout/logo.png"
              alt="header"
              class="h-22 w-22"
         >
       </li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
-      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('news')">Actualité</li>
+      <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('sponsors')">Sponsors / Partenaires</li>
       <app-button name="Contact"/>
     </ul>
   </nav>
@@ -32,12 +32,12 @@
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu>
-        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white  hover:rounded" (click)="router.navigateByUrl('')">Accueil</li>
-        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('about')">A propos</li>
-        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('expeditions')">Expéditions</li>
-        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('associations')">Associations</li>
-        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('news')">Actualité</li>
-        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="router.navigateByUrl('sponsors')">Sponsors / Partenaires</li>
+        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white  hover:rounded" (click)="helperService.navigateTo('')">Accueil</li>
+        <li class="cursor-pointer p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('about')">A propos</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('expeditions')">Expéditions</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('associations')">Associations</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('news')">Actualité</li>
+        <li class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white hover:rounded" (click)="helperService.navigateTo('sponsors')">Sponsors / Partenaires</li>
         <li class="flex justify-center">
           <app-button (click)="modalIsOpen.set(true)" name="Contact"/>
         </li>

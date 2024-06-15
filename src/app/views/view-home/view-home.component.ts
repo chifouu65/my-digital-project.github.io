@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { MatGridList, MatGridListModule, MatGridTile } from "@angular/material/grid-list";
 import { NgForOf, NgOptimizedImage } from "@angular/common";
 import { ButtonComponent } from "../../components/button/button.component";
@@ -16,6 +16,8 @@ import { PartenairesAndSponsorsSectionComponent } from '../../components/partena
 import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
 import {HeaderService} from "../../services/header.service";
 import {actualites$, articles$, associations$, sponsors$} from "../../../assets/config/data";
+import {Header} from "primeng/api";
+import {ViewHelperService} from "../../services/view-helper.service";
 
 @Component({
   selector: 'app-view-home',
@@ -44,8 +46,10 @@ import {actualites$, articles$, associations$, sponsors$} from "../../../assets/
 })
 export class ViewHomeComponent {
 
-  constructor(headerService: HeaderService) {
-    headerService.get().set('home')
+  headerService = inject(HeaderService);
+
+  constructor() {
+   this.headerService.get().set('home')
   }
 
   responsiveOptions = [
@@ -72,7 +76,7 @@ export class ViewHomeComponent {
 
   actualites = actualites$
 
-  articles: Articles = articles$
+  articles = articles$
 
 
 }

@@ -28,32 +28,29 @@ const sponsors$ = [
 const  actualites$ = [
   {
     id: 1,
-    title: "Une panoplie de services !",
-    description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+    title: "Interviews",
+    description: 'Lorem ipsum dolor sit amet consectetur. Molestie diam at odio tincidunt lorem. Eu odio platea aenean.',
     img: {
-      url: 'assets/images/home/profile.png',
-
-      alt: ''
+      url: 'assets/images/actualite/Image.png',
+      alt: 'Interviews image'
     }
   },
   {
     id: 2,
-    title: "Une panoplie de services !",
-    description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+    title: "Articles",
+    description: 'Lorem ipsum dolor sit amet consectetur. Molestie diam at odio tincidunt lorem. Eu odio platea aenean.',
     img: {
-      url: 'assets/images/home/profile.png',
-
-      alt: ''
+      url: 'assets/images/actualite/Image-1.png',
+      alt: 'Articles image'
     }
   },
   {
     id: 3,
-    title: "Une panoplie de services !",
-    description: 'ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi ipsum dolor sit amet consectetur. Risus duis vel eget metus turpi',
+    title: "Livres",
+    description: 'Lorem ipsum dolor sit amet consectetur. Molestie diam at odio tincidunt lorem. Eu odio platea aenean.',
     img: {
-      url: 'assets/images/home/profile.png',
-
-      alt: ''
+      url: 'assets/images/actualite/Image-2.png',
+      alt: 'Livres Image'
     }
   }
 ]
@@ -65,24 +62,66 @@ const associations$ = [
   },
   {
     name: 'restau du coeur',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/Image.png'
   },
   {
     name: 'Eglise cool',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/image-5.png'
   },
   {
     name: 'Croix rouge',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/image-6.png'
   },
   {
     name: 'restau du coeur',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/image-7.png'
   },
   {
     name: 'Eglise cool',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/image-8.png'
   },
+]
+
+const expeditions$ =  [
+  {
+    categories: [],
+    title: 'Lorem ipsum dolor solor sit amet, consectetur adipiscing elitit tur adipiscing elit.',
+    content: ['Lorem ipsum dolor sit amet consectetur. At pharetra sit mauris massa molestie vitae ut. Imperdiet fusce sed sit suspendisse vehicula. Turpis massa arcu morbi lectus odio ante. Penatibus.'],
+    img: {
+      url: 'assets/images/expeditions/Image.png',
+      alt: 'Photo de josué',
+    },
+    button: {
+      title: 'A propos de moi',
+      action:"about"
+    }
+  },
+  {
+    categories: [],
+    title: 'Lorem ipsum dolor solor sit amet, consectetur adipiscing elitit tur adipiscing elit.',
+    content: ['Lorem ipsum dolor sit amet consectetur. At pharetra sit mauris massa molestie vitae ut. Imperdiet fusce sed sit suspendisse vehicula. Turpis massa arcu morbi lectus odio ante. Penatibus.'],
+    img: {
+      url: 'assets/images/expeditions/Image-2.png',
+      alt: 'Photo de josué',
+    },
+    button: {
+      title: 'A propos de moi',
+      action:"about"
+    }
+  },
+  {
+    categories: [],
+    title: 'Lorem ipsum dolor solor sit amet, consectetur adipiscing elitit tur adipiscing elit.',
+    content: ['Lorem ipsum dolor sit amet consectetur. At pharetra sit mauris massa molestie vitae ut. Imperdiet fusce sed sit suspendisse vehicula. Turpis massa arcu morbi lectus odio ante. Penatibus.'],
+    img: {
+      url: 'assets/images/expeditions/Image-1.png',
+      alt: 'Photo de josué',
+    },
+    button: {
+      title: 'A propos de moi',
+      action:"about"
+    }
+  }
 ]
 
 const articles$ = [
@@ -96,9 +135,7 @@ const articles$ = [
     },
     button: {
       title: 'A propos de moi',
-      action: () => {
-        console.log('button a propos')
-      }
+      action:"about"
     }
   },
   {
@@ -111,9 +148,7 @@ const articles$ = [
     },
     button: {
       title: 'La Bretagne...',
-      action: () => {
-        console.log('button Tour de bretagne')
-      }
+      action: "article"
     }
   }
 ]
@@ -121,18 +156,17 @@ const articles$ = [
 const articles_about$ = [
   {
     categories: ['A Propos'],
-    title: 'Josué Famille',
-    content: ['Lorem ipsum dolor sit amet consectetur. Risus duis vel eget metus turpis ac placerat ac. Risus aenean hendrerit sem quam. Eu non nulla nullam nibh viverra fringilla duis.', 'Lorem ipsum dolor sit amet consectetur. In massa bibendum aliquam faucibus libero et mauris pellentesque. Neque commodo ut elit dolor. Dictum quam dolor sed volutpat. Nisi netus risus id sed. Ultricies phasellus sit eget platea aliquet. At tristique.'],
-    img: {
-      url: 'assets/images/home/profile.png',
-      alt: 'Photo de josué',
-    },
-    button: {
-      title: 'A propos de moi',
-      action: () => {
-        console.log('button a propos')
+    title: 'Josué Josué',
+    content: ['Lorem ipsum dolor sit amet consectetur. Risus duis vel eget metus turpis ac placerat ac. Risus aenean hendrerit sem quam. Eu non nulla nullam nibh viverra fringilla duis.', 'Lorem ipsum dolor sit amet consectetur. In massa bibendum aliquam faucibus libero et mauris pellentesque. Neque commodo ut elit dolor.Lorem ipsum dolor sit amet consectetur. Risus duis vel eget metus turpis ac placerat ac. Risus aenean hendreruis.Lorem ipsum dolor sit amet consectetur. Risus duis vel eget metus turpis ac placerat ac. Risus aenean hendrerit sem quam. Eu non nulla nullam nibh viverra fringilla duis. Dictum quam dolor sed volutpat. Nisi netus risus id sed. Ultricies phasellus sit eget platea aliquet. At tristique.'],
+    imgs: [
+      {
+        url: 'assets/images/about/Frame.png',
+        alt: 'Photo de josué',
+      },{
+        url: 'assets/images/about/Frame-1.png',
+        alt: 'Photo de josué',
       }
-    }
+    ],
   }]
 
 const  texts_about$ = [
@@ -140,13 +174,13 @@ const  texts_about$ = [
   title: "Autumn Is a Second Spring",
   desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
 },{
-  title: "Autumn Is a Second Spring",
+  title: "Look Deep Into Nature",
   desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
 },{
-  title: "Autumn Is a Second Spring",
+  title: "Study Nature, Love Nature",
   desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
 },{
-  title: "Autumn Is a Second Spring",
+  title: "Just Let It Rain",
   desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
 }]
 
@@ -160,5 +194,6 @@ export {
   actualites$,
   associations$,
   articles$,
-  about$
+  about$,
+  expeditions$
 }

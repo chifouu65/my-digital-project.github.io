@@ -10,16 +10,16 @@
       />
       <div class="flex flex-col gap-4 justify-center">
         <div class="flex flex-col justify-center tracking-wider">
-          <div *ngFor="let categorie of article.categories">
+          @for ( categorie of article.categories; track $index) {
             <p class="text-sm">{{ categorie }}</p>
-          </div>
+          }
           <h2 class="text-lg">{{ article.title }}</h2>
           <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
         </div>
-        <app-button
-          (click)="article.button.action()"
-          [name]="article.button.title"
-        />
+          <app-button
+            (click)="helperService.navigateTo(article.button.action)"
+            [name]="article.button.title"
+          />
       </div>
     </div>
     }

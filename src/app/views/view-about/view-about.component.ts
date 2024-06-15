@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {HeaderService} from "../../services/header.service";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {ArticlesSectionComponent} from "../../components/articles-section/articles-section.component";
 import {Articles} from "../../model/articles";
 import {about$} from "../../../assets/config/data";
+import {ButtonComponent} from "../../components/button/button.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-view-about',
@@ -11,7 +13,9 @@ import {about$} from "../../../assets/config/data";
   imports: [
     MatGridList,
     MatGridTile,
-    ArticlesSectionComponent
+    ArticlesSectionComponent,
+    ButtonComponent,
+    NgForOf
   ],
   templateUrl: './view-about.component.html',
   styleUrl: './view-about.component.css'
@@ -24,4 +28,5 @@ export class ViewAboutComponent {
   }
 
   protected readonly about$ = about$;
+  protected readonly inject = inject;
 }

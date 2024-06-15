@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ArticlesSectionComponent } from '../../components/articles-section/articles-section.component';
 import {HeaderService} from "../../services/header.service";
-import {articles$} from "../../../assets/config/data";
+import {articles$, expeditions$} from "../../../assets/config/data";
 
 @Component({
   selector: 'app-view-expedition',
@@ -16,5 +16,5 @@ export class ViewExpeditionComponent {
     headerService.get().set('expédition')
   }
 
-  articles = articles$
+  articles = expeditions$
 }

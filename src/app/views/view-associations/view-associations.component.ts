@@ -3,11 +3,12 @@ import { ButtonComponent } from '../../components/button/button.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {HeaderService} from "../../services/header.service";
 import {associations$} from "../../../assets/config/data";
+import {TitleCasePipe} from "@angular/common";
 
 @Component({
   selector: 'app-view-associations',
   standalone: true,
-  imports: [ButtonComponent, MatGridListModule],
+  imports: [ButtonComponent, MatGridListModule, TitleCasePipe],
   templateUrl: './view-associations.component.html',
   styleUrl: './view-associations.component.css'
 })

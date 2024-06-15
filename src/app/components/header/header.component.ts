@@ -9,6 +9,7 @@ import {ModalComponent} from "../modal/modal.component";
 import {MatToolbar, MatToolbarRow} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
 import {HeaderService} from "../../services/header.service";
+import {ViewHelperService} from "../../services/view-helper.service";
 
 @Component({
   selector: 'app-header',
@@ -32,7 +33,6 @@ import {HeaderService} from "../../services/header.service";
 })
 export class HeaderComponent {
 
-  router = inject(Router)
 
   modalIsOpen = signal(false)
 
@@ -43,15 +43,12 @@ export class HeaderComponent {
   windowHeight = signal(0)
 
   headerService = inject(HeaderService)
-
+  helperService = inject(ViewHelperService)
 
   type = computed(() => {
     return this.headerService.get()() === 'home'
   })
   constructor() {
-
-
-    console.log(this.router.url)
 
     effect(() => {
       console.log(this.navOutBanner(), ' change navOutBanner')
