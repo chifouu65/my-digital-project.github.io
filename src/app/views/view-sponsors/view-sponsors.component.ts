@@ -3,16 +3,18 @@ import {ButtonComponent} from "../../components/button/button.component";
 import {FormComponent} from "../../components/form/form.component";
 import {ContactSectionComponent} from "../../components/contact-section/contact-section.component";
 import {HeaderService} from "../../services/header.service";
-import {sponsors$} from "../../../assets/config/data";
+import {about$, sponsors$} from "../../../assets/config/data";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-view-sponsors',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    FormComponent,
-    ContactSectionComponent
-  ],
+    imports: [
+        ButtonComponent,
+        FormComponent,
+        ContactSectionComponent,
+        NgForOf
+    ],
   templateUrl: './view-sponsors.component.html',
   styleUrl: './view-sponsors.component.css'
 })
@@ -22,4 +24,6 @@ export class ViewSponsorsComponent {
   constructor(headerService: HeaderService) {
     headerService.get().set('Sponsors / Partenaires')
   }
+
+    protected readonly about = about$;
 }

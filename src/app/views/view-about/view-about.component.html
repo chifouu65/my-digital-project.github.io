@@ -1,41 +1,43 @@
 
-<div class="flex flex-col gap-16 py-16 xl:py-32">
-  <section class=" max-w-4xl mx-auto flex flex-col gap-32">
-    @for (article of about.articles_about$; track $index) {
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center"
-      >
-        <div class="flex-col flex md:flex-row md:w-1/2 w-full ">
+  <div class="flex flex-col gap-16 py-16 xl:py-32">
+    @defer (on viewport) {
 
-        @for(img of article.imgs; track $index) {
-            <img
-              class="object-cover w-full"
-              [src]="img.url"
-              [alt]="img.alt"
-            />
-        }
-        </div>
+    <section class=" max-w-4xl mx-auto flex flex-col gap-32">
+      @for (article of about.articles_about$; track $index) {
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center"
+        >
+          <div class="flex-col flex md:flex-row md:w-1/2 w-full ">
 
-        <div class="flex flex-col gap-4 justify-center">
-          <div class="flex flex-col justify-center tracking-wider">
-            @for ( categorie of article.categories; track $index) {
-              <p class="text-sm">{{ categorie }}</p>
+            @for(img of article.imgs; track $index) {
+              <img
+                class="object-cover w-full"
+                [src]="img.url"
+                [alt]="img.alt"
+              />
             }
-            <h2 class="text-lg">{{ article.title }}</h2>
-            <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
+          </div>
+
+          <div class="flex flex-col gap-4 justify-center">
+            <div class="flex flex-col justify-center tracking-wider">
+              @for ( categorie of article.categories; track $index) {
+                <p class="text-sm">{{ categorie }}</p>
+              }
+              <h2 class="text-lg">{{ article.title }}</h2>
+              <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    }
-  </section>
+      }
+    </section>
 
-  <section class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
-    <p class="text-sm font-medium">
-      Coach sportif
-    </p>
-    <p class="text-3xl font-medium">Go along With Nature</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 ">
-      @for (text of about.texts_about$; track $index) {
+    <section class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
+      <p class="text-sm font-medium">
+        Coach sportif
+      </p>
+      <p class="text-3xl font-medium">Go along With Nature</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 ">
+        @for (text of about.texts_about$; track $index) {
           <p class="flex flex-col gap-4 text-left items-start">
           <span>
             <strong>
@@ -44,9 +46,17 @@
           </span>
             {{text.desc}}
           </p>
-      }
-    </div>
+        }
+      </div>
 
 
-  </section>
-</div>
+    </section>
+    } @placeholder (minimum 300ms) {
+      <p>
+        loading...
+      </p>
+    }
+
+  </div>
+
+

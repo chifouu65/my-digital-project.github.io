@@ -1,37 +1,46 @@
 <div class="flex flex-col gap-16 py-16 xl:py-32 max-w-4xl mx-auto">
-  <p class="text-sm text-center">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
-  </p>
 
-  <div class="flex flex-col justify-between items-center ">
-    <div class="grid grid-cols-3 gap-16">
-      @for (sponsor of sponsors; track $index) {
-        <div class="w-full flex justify-center items-center">
-          <div class="text-center w-fit" >
-            <div class="font-semibold pb-4">
-              {{sponsor.name}}
-            </div>
-            <div class="h-32 w-32 md:h-52 md:w-52 pb-4">
-              <img class="w-full h-full object-cover" [src]="sponsor.img" [alt]="'logo'.concat(sponsor.name)"/>
+  @defer (on viewport) {
+    <p class="text-sm text-center">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor ?
+    </p>
+
+    <div class="flex flex-col justify-between items-center ">
+      <div class="grid grid-cols-3 gap-16">
+        @for (sponsor of sponsors; track $index) {
+          <div class="w-full flex justify-center items-center">
+            <div class="text-center w-fit" >
+              <div class="font-semibold pb-4">
+                {{sponsor.name}}
+              </div>
+              <div class="h-32 w-32 md:h-52 md:w-52 pb-4">
+                <img class="w-full h-full object-cover" [src]="sponsor.img" [alt]="'logo'.concat(sponsor.name)"/>
+              </div>
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
-  </div>
 
-  <div class="text-center">
-    <h2 class="text-lg ">
-      Vous souhaitez être Sponsors ? Ou Partenaires ?
-    </h2>
-    <p class="text-sm text-center pt-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, officiis, voluptatum! Aliquam architecto cupiditate debitis deleniti dolores fuga iure nostrum quis tempore voluptate? Ad commodi cupiditate quo sint tempore vel.
+    <div class="text-center">
+      <h2 class="text-lg ">
+        Vous souhaitez être Sponsors ? Ou Partenaires ?
+      </h2>
+      <p class="text-sm text-center pt-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, officiis, voluptatum! Aliquam architecto cupiditate debitis deleniti dolores fuga iure nostrum quis tempore voluptate? Ad commodi cupiditate quo sint tempore vel.
+      </p>
+    </div>
+
+    <app-contact-section [title]="false"/>
+
+  } @placeholder (minimum 300ms) {
+    <p>
+      loading...
     </p>
-  </div>
+  }
 
-  <app-contact-section [title]="false"/>
 
 </div>

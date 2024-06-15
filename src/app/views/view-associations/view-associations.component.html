@@ -1,18 +1,26 @@
+  <div class="flex flex-col gap-16 py-16 xl:py-32 max-w-4xl mx-auto justify-between items-center">
+    @defer (on viewport) {
 
-<div class="flex flex-col gap-16 py-16 xl:py-32 max-w-4xl mx-auto justify-between items-center">
     <div class="grid md:grid-cols-2 grid-cols-1 gap-16 ">
-        @for (association of associations; track $index) {
-           <div class="w-full flex justify-center items-center">
-            <div class="text-center w-fit" >
-                <div class="font-semibold pb-4">
-                    {{association.name | titlecase }}
-                </div>
-                <div class="h-32 w-32 md:h-52 md:w-52 pb-4">
-                    <img class="w-full h-full object-cover" [src]="association.img" [alt]="association.name"/>
-                </div>
-                <app-button name="En savoir plus"/>
+      @for (association of associations; track $index) {
+        <div class="w-full flex justify-center items-center">
+          <div class="text-center w-fit" >
+            <div class="font-semibold pb-4">
+              {{association.name | titlecase }}
             </div>
-           </div>
-        }
+            <div class="h-32 w-32 md:h-52 md:w-52 pb-4">
+              <img class="w-full h-full object-cover" [src]="association.img" [alt]="association.name"/>
+            </div>
+            <app-button name="En savoir plus"/>
+          </div>
+        </div>
+      }
     </div>
-</div>
+    } @placeholder (minimum 300ms) {
+      <p>
+        loading...
+      </p>
+    }
+
+  </div>
+

@@ -2,14 +2,16 @@ import {Component, inject, input, signal} from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { FormComponent } from '../form/form.component';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Header} from "primeng/api";
+import {Header, SharedModule} from "primeng/api";
 import {HeaderService} from "../../services/header.service";
 import {ViewHelperService} from "../../services/view-helper.service";
+import {ButtonComponent} from "../button/button.component";
+import {CarouselModule} from "primeng/carousel";
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [MatIcon, FormComponent],
+  imports: [MatIcon, FormComponent, ButtonComponent, CarouselModule, SharedModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.css'
 })

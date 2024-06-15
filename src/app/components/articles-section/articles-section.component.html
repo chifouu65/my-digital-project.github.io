@@ -1,26 +1,34 @@
-<section class=" max-w-4xl mx-auto flex flex-col gap-32">
+@defer (on viewport) {
+  <section class=" max-w-4xl mx-auto flex flex-col gap-32">
     @for (article of articles(); track $index) {
-    <div
-      class="flex gap-16 justify-between items-center w-full flex-col md:flex-row article"
-    >
-      <img
-        class="md:w-1/2 w-full object-cover"
-        [src]="article.img.url"
-        [alt]="article.img.alt"
-      />
-      <div class="flex flex-col gap-4 justify-center">
-        <div class="flex flex-col justify-center tracking-wider">
-          @for ( categorie of article.categories; track $index) {
-            <p class="text-sm">{{ categorie }}</p>
-          }
-          <h2 class="text-lg">{{ article.title }}</h2>
-          <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
-        </div>
+      <div
+        class="flex gap-16 justify-between items-center w-full flex-col md:flex-row article"
+      >
+        <img
+          class="md:w-1/2 w-full object-cover"
+          [src]="article.img.url"
+          [alt]="article.img.alt"
+        />
+        <div class="flex flex-col gap-4 justify-center">
+          <div class="flex flex-col justify-center tracking-wider">
+            @for ( categorie of article.categories; track $index) {
+              <p class="text-sm">{{ categorie }}</p>
+            }
+            <h2 class="text-lg">{{ article.title }}</h2>
+            <p *ngFor="let item of article.content" class="text-sm">{{ item }}</p>
+          </div>
           <app-button
             (click)="helperService.navigateTo(article.button.action)"
             [name]="article.button.title"
           />
+        </div>
       </div>
-    </div>
     }
   </section>
+} @placeholder (minimum 300ms) {
+  <p>
+    loading...
+  </p>
+}
+
+

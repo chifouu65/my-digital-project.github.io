@@ -1,38 +1,50 @@
-<section class="px-16 xl:px-32 flex flex-col gap-8 text-start">
+@defer (on viewport) {
+  <section class="px-16 xl:px-32 flex flex-col gap-8 text-start">
     <div class="flex flex-col gap-4">
-      @if (title() === true) {
+      @if (title()) {
         <div class="flex flex-col">
           <p class="text-sm">
             Actualités
           </p>
-        <div class="text-lg font-medium">
-          Une panoplie de services !
+          <div class="text-lg font-medium">
+            Une panoplie de services !
+          </div>
         </div>
-      </div>
       } @else {
-
+        <div class="w-full pb-16 flex justify-center items-center">
+            <p class="text-center max-w-2xl ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima expedita quia dignissimos provident eum labore omnis nulla illo reprehenderit sapiente.
+          </p>
+        </div>
       }
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         @for (actualite of actualites(); track $index) {
-              <article>
-                <div class="flex flex-col">
-                  <img class="w-full h-full" height="100%" width="250" [src]="actualite.img.url" [alt]="actualite.img.alt" />
-                
-                  <div class="flex flex-row justify-between items-center w-full">
-                    <div class="flex flex-col gap-2 w-3/4 md:w-full">
-                      <div class="text-lg pt-4 font-medium">
-                        {{ actualite.title }}
-                      </div>
-                        <p class="text-sm"> {{ actualite.description }} </p>
-                    </div>
-                  <mat-icon aria-hidden="false" fontIcon="arrow_forward"></mat-icon>
+          <article>
+            <div class="flex flex-col">
+              <img class="w-full h-full" height="100%" width="250" [src]="actualite.img.url" [alt]="actualite.img.alt" />
+
+              <div class="flex flex-row justify-between items-center w-full">
+                <div class="flex flex-col gap-2 w-3/4 md:w-full">
+                  <div class="text-lg pt-4 font-medium">
+                    {{ actualite.title }}
                   </div>
-        
-                 </div>
-              </article>
+                  <p class="text-sm"> {{ actualite.description }} </p>
+                </div>
+                <mat-icon aria-hidden="false" fontIcon="arrow_forward"></mat-icon>
+              </div>
+
+            </div>
+          </article>
         }
       </div>
     </div>
 
   </section>
+} @placeholder (minimum 300ms) {
+  <p>
+    loading...
+  </p>
+}
+
+

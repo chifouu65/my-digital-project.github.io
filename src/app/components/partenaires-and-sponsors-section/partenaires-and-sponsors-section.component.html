@@ -1,4 +1,5 @@
-<section id="scroll" class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
+@defer (on viewport) {
+  <section id="scroll" class="px-16 xl:px-32 flex flex-col gap-8 text-center carousel">
     <p class="text-3xl font-medium">Sponsors & Partenaires</p>
     <p-carousel
       class=""
@@ -9,14 +10,22 @@
       [showIndicators]="false"
       [responsiveOptions]="responsiveOptions()"
     >
-    <ng-template let-sponsor pTemplate="item">
-      <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
-        <div class="w-full p-8">
-          <img class="w-full h-full" [src]="sponsor.img" [alt]="sponsor.name" />
+      <ng-template let-sponsor pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3 flex flex-col">
+          <div class="w-full p-8">
+            <img class="w-full h-full" [src]="sponsor.img" [alt]="sponsor.name" />
+          </div>
         </div>
-      </div>
-    </ng-template>
+      </ng-template>
     </p-carousel>
 
     <app-button (click)="helperService.navigateTo('sponsors')" name="Moi aussi je veux te rejoindre !" />
   </section>
+} @placeholder (minimum 300ms) {
+  <p>
+    loading...
+  </p>
+}
+
+
+
