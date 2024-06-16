@@ -25,7 +25,7 @@ const sponsors$ = [
   }
 ]
 
-const  actualites$ = [
+const actualites$ = [
   {
     id: 1,
     title: "Interviews",
@@ -55,34 +55,108 @@ const  actualites$ = [
   }
 ]
 
+type IPageContent = {
+  title: string
+  description: string
+  img: { url: string; alt: string }
+  subs: {
+    title: string; description: string; img?: {
+      url: string,
+      alt: string
+    }
+  }
+}
+
+export type IAssociation = {
+  id: number
+  name: string
+  img: string
+  page_content: IPageContent[]
+}
 const associations$ = [
   {
+    id: 1,
     name: 'Anne Charlotte',
-    img: 'assets/images/associations/img.png'
+    img: 'assets/images/associations/img.png',
+    page_content: [
+      {
+        title: 'Qui est un sourire dans les yeux d’Anne Charlotte ? ',
+        description: 'Lorem ipsum dolor sit amet consectetur. In massa bibendum aliquam faucibus libero et mauris pellentesque. Neque commodo ut elit dolor. Dictum quam dolor sed volutpat. Nisi netus risus id sed. Ultricies phasellus sit eget platea aliquet. At tristique.',
+        img: {
+          alt: 'Qui est un sourire dans les yeux d’Anne Charlotte ? ',
+          url: 'assets/images/associations/anne-charlotte/happy.png'
+        },
+        subs: [
+          {
+            title: 'Autumn Is a Second Spring',
+            description: 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,\n' +
+              'lorem quis bibendum auctor, nisi elit consequat ipsum, nec\n' +
+              'sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate\n' +
+              'cursus a sit amet mauris. Morbi accumsan ipsum velit.',
+          },
+          {
+            title: 'Autumn Is a Second Spring',
+            description: 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,\n' +
+              'lorem quis bibendum auctor, nisi elit consequat ipsum, nec\n' +
+              'sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate\n' +
+              'cursus a sit amet mauris. Morbi accumsan ipsum velit.'
+          }
+        ]
+      },
+      {
+        title: 'Qui est un sourire dans les yeux d’Anne Charlotte ? ',
+        description: 'Lorem ipsum dolor sit amet consectetur. In massa bibendum aliquam faucibus libero et mauris pellentesque. Neque commodo ut elit dolor. Dictum quam dolor sed volutpat. Nisi netus risus id sed. Ultricies phasellus sit eget platea aliquet. At tristique.',
+        img: {
+          alt: 'Qui est un sourire dans les yeux d’Anne Charlotte ? ',
+          url: 'assets/images/associations/img.png'
+        },
+        subs: [
+          {
+            title: 'Autumn Is a Second Spring',
+            description: 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,\n' +
+              'lorem quis bibendum auctor, nisi elit consequat ipsum, nec\n' +
+              'sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate\n' +
+              'cursus a sit amet mauris. Morbi accumsan ipsum velit.'
+          },
+          {
+            title: 'Autumn Is a Second Spring',
+            description: 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,\n' +
+              'lorem quis bibendum auctor, nisi elit consequat ipsum, nec\n' +
+              'sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate\n' +
+              'cursus a sit amet mauris. Morbi accumsan ipsum velit.'
+          }
+        ]
+      },
+    ]
   },
   {
+    id: 2,
     name: 'restau du coeur',
     img: 'assets/images/associations/Image.png'
   },
   {
+    id: 3,
     name: 'Eglise cool',
     img: 'assets/images/associations/image-5.png'
   },
   {
+    id: 4,
     name: 'Croix rouge',
     img: 'assets/images/associations/image-6.png'
   },
   {
+    id: 5,
     name: 'restau du coeur',
     img: 'assets/images/associations/image-7.png'
   },
   {
+    id: 6,
     name: 'Eglise cool',
     img: 'assets/images/associations/image-8.png'
   },
 ]
 
-const expeditions$ =  [
+const expeditions$ = [
   {
     categories: [],
     title: 'Lorem ipsum dolor solor sit amet, consectetur adipiscing elitit tur adipiscing elit.',
@@ -93,7 +167,7 @@ const expeditions$ =  [
     },
     button: {
       title: 'A propos de moi',
-      action:"about"
+      action: "about"
     }
   },
   {
@@ -106,7 +180,7 @@ const expeditions$ =  [
     },
     button: {
       title: 'A propos de moi',
-      action:"about"
+      action: "about"
     }
   },
   {
@@ -119,7 +193,7 @@ const expeditions$ =  [
     },
     button: {
       title: 'A propos de moi',
-      action:"about"
+      action: "about"
     }
   }
 ]
@@ -135,7 +209,7 @@ const articles$ = [
     },
     button: {
       title: 'A propos de moi',
-      action:"about"
+      action: "about"
     }
   },
   {
@@ -162,27 +236,27 @@ const articles_about$ = [
       {
         url: 'assets/images/about/Frame.png',
         alt: 'Photo de josué',
-      },{
+      }, {
         url: 'assets/images/about/Frame-1.png',
         alt: 'Photo de josué',
       }
     ],
   }]
 
-const  texts_about$ = [
+const texts_about$ = [
   {
-  title: "Autumn Is a Second Spring",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
-},{
-  title: "Look Deep Into Nature",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
-},{
-  title: "Study Nature, Love Nature",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
-},{
-  title: "Just Let It Rain",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
-}]
+    title: "Autumn Is a Second Spring",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
+  }, {
+    title: "Look Deep Into Nature",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
+  }, {
+    title: "Study Nature, Love Nature",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
+  }, {
+    title: "Just Let It Rain",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, dolorem excepturi fugiat fugit, id illo laborum, laudantium modi odio repudiandae sapiente sequi. Adipisci culpa eaque, inventore laboriosam maiores quae"
+  }]
 
 const about$ = {
   articles_about$,

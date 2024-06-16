@@ -48,6 +48,10 @@ export class HeaderComponent {
   type = computed(() => {
     return this.headerService.get()() === 'home'
   })
+
+  isError = computed(() => {
+    return this.headerService.get()() === 'error'
+  })
   constructor() {
 
     effect(() => {
@@ -68,7 +72,6 @@ export class HeaderComponent {
     } else if (this.navOutBanner() && window.scrollY <= this.windowHeight() ) {
       this.navOutBanner.set(false)
     }
-
   }
 
   scroll(id: string) {

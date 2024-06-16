@@ -6,6 +6,7 @@ import {ViewExpeditionComponent} from "../views/view-expedition/view-expedition.
 import {ViewAssociationsComponent} from "../views/view-associations/view-associations.component";
 import {ViewNewsComponent} from "../views/view-news/view-news.component";
 import {ViewSponsorsComponent} from "../views/view-sponsors/view-sponsors.component";
+import {ViewAssociationComponent} from "../views/view-association/view-association.component";
 
 export const routes: Routes = [
   { path: 'home', component: ViewHomeComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'news', component: ViewNewsComponent },
   { path: 'sponsors', component: ViewSponsorsComponent },
   { path: 'associations', component: ViewAssociationsComponent },
+  { path: 'association/:id', component: ViewAssociationComponent },
 
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: ViewErrorComponent },  // Wildcard route for a 404 page

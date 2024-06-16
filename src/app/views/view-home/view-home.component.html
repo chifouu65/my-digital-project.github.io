@@ -1,13 +1,18 @@
 <div class="flex flex-col gap-16 py-16 xl:py-32">
-
-    <app-articles-section [articles]="articles"/>
-
-    <app-associations-section [associations]="associations" [responsiveOptions]="responsiveOptions"/>
-
-    <app-actualites-section [title]="true" [actualites]="actualites"/>
-
-    <app-partenaires-and-sponsors-section [sponsors]="sponsors" [responsiveOptions]="responsiveOptions"/>
-
+    <app-articles-section
+      [articles]="articles"
+    />
+    <app-associations-section
+      [associations]="associations"
+      [responsiveOptions]="responsiveOptions"
+    />
+    <app-actualites-section
+      [title]="true"
+      [actualites]="actualites"
+    />
+    <app-partenaires-and-sponsors-section
+      [sponsors]="sponsors"
+      [responsiveOptions]="responsiveOptions"
+    />
     <app-contact-section/>
-
 </div>

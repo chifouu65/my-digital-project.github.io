@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {HeaderService} from "../../services/header.service";
 import {associations$} from "../../../assets/config/data";
 import {NgForOf, TitleCasePipe} from "@angular/common";
+import {ViewHelperService} from "../../services/view-helper.service";
 
 @Component({
   selector: 'app-view-associations',
@@ -18,5 +19,8 @@ export class ViewAssociationsComponent {
     headerService.get().set('associations')
   }
 
+  helperService= inject(ViewHelperService)
+
   associations = associations$
+  protected readonly String = String;
 }
