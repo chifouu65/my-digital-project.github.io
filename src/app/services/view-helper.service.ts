@@ -27,18 +27,24 @@ export class ViewHelperService {
     })
   }
 
-  sendForm(data: any, submited: WritableSignal<boolean>) {
-    const headers = new HttpHeaders(formGate.headers);
-    this.http.post(formGate.url,
-      data,
-      { 'headers': headers }).subscribe(
-      (response : any) => {
-        console.log(response);
-        if(response.ok) {
-          submited.set(true)
+  sendForm(data: any) {
+    return new Promise<void>((resolve, reject) => {
+      const headers = new HttpHeaders(formGate.headers);
+      this.http.post(formGate.url,
+        data,
+        { 'headers': headers }).subscribe(
+        (response : any) => {
+          console.log(response);
+          if(response.ok) {
+            resolve()
+
+          }else {
+            reject(response)
+          }
         }
-      }
-    );
+      );
+    })
+
   }
 
 }

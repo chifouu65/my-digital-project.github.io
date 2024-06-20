@@ -21,9 +21,8 @@ export class ContactSectionComponent {
   http = inject(HttpClient)
   helperService = inject(ViewHelperService)
 
-  submited = signal(false)
-
   formSubmit(event: any) {
-    this.helperService.sendForm({ name: event.name, replyto: event.email, message: `${event.object} : ${event.message}` }, this.submited)
+    console.log('formSubmit', event)
+    this.helperService.sendForm({ name: event.name, replyto: event.email, message: `${event.object} : ${event.message}` })
   }
 }

@@ -1,10 +1,10 @@
-<section class="px-16 xl:px-32 flex flex-col gap-8">
+<section class="max-w-4xl mx-auto flex flex-col gap-8">
 
   @defer (on viewport) {
   @if(association()?.page_content) {
-    <div class="grid md:grid-cols-2 gap-16 py-16 xl:py-32 max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 py-16 w-full">
       @for (col of association()?.page_content; track $index) {
-        <div class="flex flex-col h-full gap-8">
+        <div class="flex flex-col h-full gap-8 w-full">
           <div>
             <p class="text-3xl font-medium">
               Vous souhaitez être Sponsors ? Ou Partenaires ?
@@ -13,7 +13,7 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, officiis, voluptatum! Aliquam architecto cupiditate debitis deleniti dolores fuga iure nostrum quis tempore voluptate? Ad commodi cupiditate quo sint tempore vel.
             </p>
           </div>
-          <img [src]="col.img.url" [alt]="col.img.alt"/>
+          <img class="w-full" [src]="col.img.url" [alt]="col.img.alt"/>
           <div class="flex md:flex-col gap-4">
             @for (sub of col.subs; track $index) {
               <div>

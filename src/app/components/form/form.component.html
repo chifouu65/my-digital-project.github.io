@@ -1,20 +1,59 @@
+@if(!submited()) {
+  <form (ngSubmit)="onSubmit(form)" class="flex flex-col w-full" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Nom - Prénom</mat-label>
+      <input
+        [formControl]="form.controls.name"
+        (blur)="updateErrorMessage()"
+        name="name" matInput type="text" placeholder="Prince José..." ngModel />
+      @if (form.controls.name.invalid) {
+        <mat-error>
+          Vous devez entrer un Nom!
+        </mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email </mat-label>
+      <input
+        [formControl]="form.controls.email"
 
-  <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" class="flex flex-col w-full" >
-    <mat-form-field class="example-full-width">
-      <mat-label>Nom - Prénom *</mat-label>
-      <input name="name" matInput type="text" placeholder="Prince José..." ngModel />
+        (blur)="updateErrorMessage()"
+        name="email" type="email" matInput placeholder="jose@gmail.com..." ngModel />
+      @if (form.controls.email.invalid) {
+        <mat-error>
+          Vous devez entrer un Email!
+        </mat-error>
+      }
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <mat-label>Email *</mat-label>
-      <input name="email" type="email" matInput placeholder="jose@gmail.com..." ngModel />
+      <mat-label type="text">Object</mat-label>
+      <input
+        [formControl]="form.controls.object"
+
+        (blur)="updateErrorMessage()"
+        name="object" matInput placeholder="Question / Sponsors / Partenaires / Associations..." ngModel />
+      @if (form.controls.object.invalid) {
+        <mat-error>
+          Vous devez entrer un Object!
+        </mat-error>
+      }
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <mat-label type="text">Object *</mat-label>
-      <input name="object" matInput placeholder="Question / Sponsors / Partenaires / Associations..." ngModel />
+      <mat-label>Message</mat-label>
+      <textarea
+        [formControl]="form.controls.message"
+        (blur)="updateErrorMessage()"
+        type="textarea" name="message" matInput placeholder="Ex. It makes me feel..." ngModel></textarea>
+      @if (form.controls.message.invalid) {
+        <mat-error>
+          Vous devez entrer un Nom!
+        </mat-error>
+      }
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Message *</mat-label>
-      <textarea type="textarea" name="message" matInput placeholder="Ex. It makes me feel..." ngModel></textarea>
-    </mat-form-field>
-      <app-button name="Envoyer" buttonType="submit"/>
+    <app-button name="Envoyer" buttonType="submit"/>
   </form>
+} @else {
+<p class="text-center">
+  Succès de l'envoi
+</p>
+}

@@ -1,0 +1,22 @@
+<div class="py-16 md:py-32 mx-auto max-w-4xl">
+    <article>
+      <div class="flex flex-col justify-center items-center text-center gap-8">
+        <img class="h-full w-1/2" height="100%"
+             width="250" [src]="actualite().img.url"
+             [alt]="actualite().img.alt" />
+
+        <div class="flex flex-row justify-between items-center w-full">
+          <div class="flex flex-col gap-2 w-3/4 md:w-full">
+            <div class="text-lg pt-4 font-medium">
+              {{ actualite().title }}
+            </div>
+            <p class="text-sm"> {{ actualite().description }} </p>
+            <p class="text-sm"> {{ actualite()?.sub_description }} </p>
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+
+  </div>

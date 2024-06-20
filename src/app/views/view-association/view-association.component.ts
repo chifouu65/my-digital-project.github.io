@@ -58,5 +58,4 @@ export class ViewAssociationComponent implements OnInit {
     }
   }
 
-  protected readonly sponsors = sponsors$;
 }

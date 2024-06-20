@@ -1,5 +1,5 @@
 @defer (on viewport) {
-  <section class="px-16 xl:px-32 flex flex-col gap-8 text-start">
+  <section class="max-w-4xl mx-auto  flex flex-col gap-8 text-start">
     <div class="flex flex-col gap-4">
       @if (title()) {
         <div class="flex flex-col">
@@ -18,7 +18,7 @@
         </div>
       }
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         @for (actualite of actualites(); track $index) {
           <article>
             <div class="flex flex-col">
@@ -31,7 +31,10 @@
                   </div>
                   <p class="text-sm"> {{ actualite.description }} </p>
                 </div>
-                <mat-icon aria-hidden="false" fontIcon="arrow_forward"></mat-icon>
+                  <mat-icon
+                    class="cursor-pointer"
+                    (click)="helperService.navigateTo('new/'.concat(actualite.id))"
+                    aria-hidden="false" fontIcon="arrow_forward"></mat-icon>
               </div>
 
             </div>

@@ -30,6 +30,7 @@ const actualites$ = [
     id: 1,
     title: "Interviews",
     description: 'Lorem ipsum dolor sit amet consectetur. Molestie diam at odio tincidunt lorem. Eu odio platea aenean.',
+    sub_description: "Lotur. Mol. Molest ipsum doloest ipsum d amet consectetur. Molest ipsum dolor  d amet consectetur. Molest ipsum dolor sit amet consecpsum d amet consectetur. tetur. Mrem ipsu amet consectetur. Molest ipsum d amet consectetur. Molest ipsum dolor sit amet consectetur. Molm dolor sit amet consectetur. Molestie diam at odio tinciduntLorem ipsum dolor sit amet consectetur. Molest ipsum dolor sit amet consectetur. Molestie diam at odio ie diam at odio tinciduntLorem ipsum dolor sit amet consectetur. Molestie diam at odio tincidunt",
     img: {
       url: 'assets/images/actualite/Image.png',
       alt: 'Interviews image'
