@@ -25,5 +25,4 @@ export class ViewSponsorsComponent {
     headerService.get().set('Sponsors / Partenaires')
   }
 
-    protected readonly about = about$;
 }

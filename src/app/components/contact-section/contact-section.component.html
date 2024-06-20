@@ -1,5 +1,5 @@
 @defer (on viewport) {
-  <section class="px-16 xl:px-32 flex flex-col gap-8 justify-center items-center w-full">
+  <section class="max-w-4xl mx-auto flex flex-col gap-8 justify-center items-center w-full">
     @if(title()) {
       <div class="pb-8">
         <p class="text-3xl font-medium">Contactez-moi</p>
@@ -47,15 +47,8 @@
           </ul>
         </div>
       </div>
-      @if(submited()) {
-        <div class="flex w-full h-full justify-center items-center">
-          <p class="text-center text-3xl font-medium pt-10 md:pt-0">
-            Merci pour votre message !
-          </p>
-        </div>
-      } @else {
+
         <app-form  (data)="formSubmit($event)" class="w-full md:w-1/2"></app-form>
-      }
     </div>
   </section>
 } @placeholder (minimum 300ms) {

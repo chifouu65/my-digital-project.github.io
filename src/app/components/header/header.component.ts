@@ -26,7 +26,8 @@ import {ViewHelperService} from "../../services/view-helper.service";
     MatIconButton,
     MatToolbarRow,
     NgClass,
-    TitleCasePipe
+    TitleCasePipe,
+    ModalComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

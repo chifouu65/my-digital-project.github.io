@@ -7,12 +7,14 @@ import {ViewAssociationsComponent} from "../views/view-associations/view-associa
 import {ViewNewsComponent} from "../views/view-news/view-news.component";
 import {ViewSponsorsComponent} from "../views/view-sponsors/view-sponsors.component";
 import {ViewAssociationComponent} from "../views/view-association/view-association.component";
+import {ViewNewComponent} from "../views/view-new/view-new.component";
 
 export const routes: Routes = [
   { path: 'home', component: ViewHomeComponent },
   { path: 'about', component: ViewAboutComponent },
   { path: 'expeditions', component: ViewExpeditionComponent },
   { path: 'news', component: ViewNewsComponent },
+  { path: 'new/:id', component: ViewNewComponent },
   { path: 'sponsors', component: ViewSponsorsComponent },
   { path: 'associations', component: ViewAssociationsComponent },
   { path: 'association/:id', component: ViewAssociationComponent },

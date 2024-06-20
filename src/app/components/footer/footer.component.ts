@@ -34,7 +34,7 @@ export class FooterComponent {
 
   errorMessage = '';
   http = inject(HttpClient);
-  helperService =inject(ViewHelperService)
+  helperService = inject(ViewHelperService)
 
   submited = signal(false)
 
@@ -47,9 +47,11 @@ export class FooterComponent {
   updateErrorMessage() {
     if (this.email.hasError('required')) {
       this.errorMessage = 'Vous devez entrer un Email!';
-    } if (this.name.hasError('required')) {
+    }
+    if (this.name.hasError('required')) {
       this.errorMessage = 'Vous devez entrer un Nom!';
-    } if (this.message.hasError('required')) {
+    }
+    if (this.message.hasError('required')) {
       this.errorMessage = 'Vous devez entrer un Message!';
     } else if (this.email.hasError('email')) {
       this.errorMessage = 'Email invalide!';
@@ -59,8 +61,14 @@ export class FooterComponent {
   }
 
   submitEmail() {
-    if(this.email.valid) {
-      this.helperService.sendForm({ name: this.name.value, replyto: this.email.value }, this.submited)
+    if (this.email.valid && this.name.valid) {
+      this.helperService
+        .sendForm({name: this.name.value, replyto: this.email.value})
+        .then(() => {
+          this.submited.set(true)
+        }).catch((e) => {
+          console.log(e)
+      })
     }
   }
 }
