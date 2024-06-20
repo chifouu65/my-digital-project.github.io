@@ -65,7 +65,7 @@ export class HeaderComponent {
   onScroll() {
      this.windowHeight.set(
        !this.type() ?
-       window.innerHeight - window.innerHeight /2 : window.innerHeight
+       window.innerHeight - window.innerHeight /2 : window.innerHeight -110
      )
 
     if (!this.navOutBanner() && window.scrollY >= this.windowHeight()) {
@@ -79,5 +79,6 @@ export class HeaderComponent {
     console.log(`scrolling to ${id}`);
     let el = document.getElementById(id);
     el?.scrollIntoView({behavior: 'smooth'});
+
   }
 }
