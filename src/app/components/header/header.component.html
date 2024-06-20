@@ -25,9 +25,7 @@
         <li [ngClass]="{
         'bg-opacity-20 bg-gray-500' : !navOutBanner()
         }" class="cursor-pointer  p-2 hover:bg-gray-700 hover:text-white rounded" (click)="helperService.navigateTo('associations')">Associations</li>
-        <li [ngClass]="{
-        'bg-opacity-20 bg-gray-500' : !navOutBanner()
-        }" class="cursor-pointer  " (click)="helperService.navigateTo('')">
+        <li class="cursor-pointer  " (click)="helperService.navigateTo('')">
           <img src="assets/images/layout/logo.png"
                alt="header"
                class="h-22 w-22"
